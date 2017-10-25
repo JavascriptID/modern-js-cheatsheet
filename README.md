@@ -360,18 +360,16 @@ An **explicit return** is a function where the *return* keyword is used in its b
 
 In the traditional way of writing functions, the return was always explicit. But with arrow functions, you can do *implicit return* which means that you don't need to use the keyword *return* to return a value.
 
-To do an implicit return, the code must be written in a one-line sentence.
-
 ```js
   const double = (x) => {
     return x * 2; // Explicit return here
   }
 ```
 
-Since there only is a return value here, we can do an implicit return.
+Since this function only returns something (no instructions before the *return* keyword) we can do an implicit return.
 
 ```js
-  const double = (x) => x * 2;
+  const double = (x) => x * 2; // Correct, returns x*2
 ```
 
 To do so, we only need to **remove the brackets** and the **return** keyword. That's why it's called an *implicit* return, the *return* keyword is not there, but this function will indeed return ```x * 2```.
@@ -611,7 +609,7 @@ To sum it up:
 
 I recommend to use them as much as possible in following the principles of functional programming because they are composable, concise and elegant.
 
-With those three methods, you can avoid the use of *for* and *forEach* loops in most situations. When you are tempted to do a *for* loop, try to do it with *map*, *filter* and *reduce* composed. You might struggle to do it at first because it requires you to learn a new way of thinking, but once you've got it things gets easier.
+With those three methods, you can avoid the use of *for* and *forEach* loops in most situations. When you are tempted to do a *for* loop, try to do it with *map*, *filter* and *reduce* composed. You might struggle to do it at first because it requires you to learn a new way of thinking, but once you've got it things get easier.
 
 #### Sample code
 
@@ -962,7 +960,7 @@ fetchingPosts
 
 When you do an *Ajax request* the response is not synchronous because you want a resource that takes some time to come. It even may never come if the resource you have requested is unavailable for some reason (404).
 
-To handle that kind of situations, ES2015 has given us *promises*. Promises can have three different states:
+To handle that kind of situation, ES2015 has given us *promises*. Promises can have three different states:
 
 - Pending
 - Fulfilled
