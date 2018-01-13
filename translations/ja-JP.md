@@ -403,8 +403,6 @@ function myFunc() {
 
 > **メモ:** もしある関数が値を返さなければ、それは暗黙的な `return` も明示的な `return` も行っていません。
 
-> **Note:** If your function does not return a value (with *side effects*), it doesn't do an explicit nor an implicit return.
-
 加えて、 *オブジェクト* を暗黙的に返したい場合は、ブロックのかっことの衝突を防ぐために **その周りにかっこを付ける必要があります**:
 
 ```js
@@ -559,7 +557,7 @@ const { firstName: first, age, city = "Paris" } = person; // That's it !
 
 console.log(age) // 35 -- A new variable age is created and is equal to person.age
 console.log(first) // "Nick" -- A new variable first is created and is equal to person.firstName
-console.log(firstName) // Undefined -- person.firstName exists BUT the new variable created is named first
+console.log(firstName) // ReferenceError -- person.firstName exists BUT the new variable created is named first
 console.log(city) // "Paris" -- A new variable city is created and since person.city is undefined, city is equal to the default value provided "Paris".
 ```
 
